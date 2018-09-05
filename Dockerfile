@@ -1,4 +1,5 @@
 # Alpine Linux with openjdk8
+#
 FROM alpine:3.7
 
 #------------------------
@@ -14,7 +15,7 @@ RUN { \
         echo 'set -e'; \
         echo; \
         echo 'export JAVA_HOME=$(dirname $(dirname $(dirname $(readlink -f $(which java)))))'; \
-		echo 'export PATH=$PATH:$JAVA_HOME/bin'; \
+	echo 'export PATH=$PATH:$JAVA_HOME/bin'; \
     } > /etc/profile.d/java.sh \
     && chmod +x /etc/profile.d/java.sh
      
